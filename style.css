@@ -1,0 +1,21 @@
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.my-container {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+
+/* Small Devices  < 600px*/
+@media screen and (max-width:600px) {
+    body > * {
+        padding: 0 12px;
+    }  
+}
