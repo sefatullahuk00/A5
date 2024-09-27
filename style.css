@@ -15,7 +15,5 @@
 
 /* Small Devices  < 600px*/
 @media screen and (max-width:600px) {
-    body > * {
-        padding: 0 12px;
-    }  
+    
 }
