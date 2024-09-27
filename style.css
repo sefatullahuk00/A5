@@ -12,6 +12,21 @@
     margin: 0 auto;
 }
 
+.answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: .3s ease-in-out
+}
+.faq.active .answer{
+    max-height: 400px;
+    transition: .3s ease-in-out
+}
+.faq.active svg {
+    transform: rotate(180deg);
+}
+svg {
+    transition: .3s ease-in-out
+}
 
 /* Small Devices  < 600px*/
 @media screen and (max-width:600px) {
