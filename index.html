@@ -8,7 +8,7 @@
     <!-- tailwind cdn  -->
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="pb-10">
+<body class="pb-10 relative">
     <!-- navbar  -->
     <header class="bg-pink-50 py-4 sm:py-8 px-3">
         <nav class="my-container flex justify-between items-center">
@@ -127,6 +127,17 @@
     </div>
     
   </section>
+
+  <div class="modal hidden items-center justify-center bg-[rgba(0,0,0,0.4)] z-50 fixed top-0 left-0 w-full h-screen">
+    <div class="modal-content flex flex-col items-center gap-4 justify-center bg-white rounded-lg p-4 min-w-96">
+        <h1 class="text-xl font-bold">Congrats</h1>
+        <img class="w-11 h-11" src="./assets/coin.png" alt="">
+        <p class="text-lg">you have donated for mankind</p>
+        <strong class="text-lg">Successfull</strong>
+        <button class="py-1 px-3 rounded-md bg-gray-300 font-bold modal-close">Close Confirmation</button>
+    </div>
+  </div>
+
 
     <script src="./script.js"></script>
 </body>

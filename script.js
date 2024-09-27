@@ -20,6 +20,31 @@ tabs.forEach(tab => {
     })
 })
 
+// modal show hide 
+function modalShow(data){
+    let modal = document.querySelector('.modal')
+    let modalContent = document.querySelector('.modal-content')
+    let modalClose = document.querySelector('.modal-close');
+
+    modal.classList.remove('hidden')
+    modal.classList.add('flex')
+    modalClose.addEventListener('click',() => {
+        modal.classList.remove('flex')
+        modal.classList.add('hidden')
+    })
+
+    if(Object.keys(data).length == 1){
+        modalContent.querySelector('h1').innerHTML = data.err 
+    
+        modalContent.querySelector('strong').innerHTML = '' 
+        modalContent.querySelector('p').innerHTML = '' 
+
+    }else if(Object.keys(data).length > 1){
+        modalContent.querySelector('h1').innerHTML = data.title
+        modalContent.querySelector('p').innerHTML = data.donateTo
+    }
+}
+
 // -----  Donate now form calculation -----
 let donationContent = document.getElementById('donation')
 let historyContent = document.getElementById('history')
@@ -40,12 +65,12 @@ donateBtns.forEach((donateBtn) => {
         let donateAmount = donateBtn.previousElementSibling.value
 
         //Validate if donationAmount is a positive value
-        if(isNaN(donateAmount)){
+        if(isNaN(donateAmount) || donateAmount == ''){
             // call common function of modal with err msg 
-            alert('Enter a valid value');
+            modalShow({err:'Please, Enter a valid Amount'})
         }else if(donateAmount > netAmount){
             //insufficient balance
-            alert('insufficient balance')
+            modalShow({err:'OPPS! Insufficient Balance!'})
         }else{
             // call common function of modal with scs msg
             // alert('you have donated ' + donateAmount);
@@ -73,6 +98,10 @@ donateBtns.forEach((donateBtn) => {
             historyContent.innerHTML = ''
             historyContent.prepend(historyCard);
             
+            // call modalshow function 
+            modalShow({title:'Congratulations',donateTo:donateTo})
+
+
         }
         
     })
