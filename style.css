@@ -22,7 +22,7 @@
     transition: .3s ease-in-out
 }
 .faq.active svg {
-    transform: rotate(180deg);
+    transform: rotate(-180deg);
 }
 svg {
     transition: .3s ease-in-out
